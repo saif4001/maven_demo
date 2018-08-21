@@ -21,7 +21,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
 <html>
     <head>
-        <title>Hello sai</title>
+        <title>Hello World</title>
     </head>
     <body>
         <f:view>
