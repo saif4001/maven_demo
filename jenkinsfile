@@ -1,12 +1,17 @@
 pipeline {
     agent any
     stages {
+     stage('---checkout---') {
+            steps {
+                sh "git clone https://github.com/cherukurisai451/maven_demo.git"
+            }
+        }
         stage('---clean---') {
             steps {
                 sh "mvn clean"
             }
         }
-        stage('--test--') {
+       stage('--test--') {
             steps {
                 sh "mvn test"
             }
