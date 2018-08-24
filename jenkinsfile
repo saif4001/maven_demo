@@ -3,22 +3,22 @@ pipeline {
     stages {
      stage('---checkout---') {
             steps {
-                sh "git clone https://github.com/cherukurisai451/maven_demo.git"
+                bat "git clone https://github.com/cherukurisai451/maven_demo.git"
             }
         }
         stage('---clean---') {
             steps {
-                sh "mvn clean"
+                bat "mvn clean"
             }
         }
        stage('--test--') {
             steps {
-                sh "mvn test"
+                bat "mvn test"
             }
         }
         stage('--package--') {
             steps {
-                sh "mvn package"
+                bat "mvn package"
             }
         }
     }
