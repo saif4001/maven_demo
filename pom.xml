@@ -34,10 +34,7 @@
         <maven.jetty.plugin.version>6.1.22</maven.jetty.plugin.version>
         <log4j.version>1.2.13</log4j.version>
     </properties>
- <properties>
-    <maven.compiler.source>1.6</maven.compiler.source>
-    <maven.compiler.target>1.6</maven.compiler.target>
-</properties>
+ 
  
 
     <build>
@@ -49,6 +46,8 @@
                 <artifactId>maven-jetty-plugin</artifactId>
                 <version>${maven.jetty.plugin.version}</version>
                 <configuration>
+                  <source>1.6</source>
+                  <target>1.6</target>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                 </configuration>
             </plugin>
