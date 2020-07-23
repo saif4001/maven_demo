@@ -1,14 +1,11 @@
-node {
-    stage("GITHUB_CHECKOUT"){
-       git credentialsId: 'GITHUB', url: 'https://github.com/cherukurisai451/maven_demo.git' 
+node {  
+    stage('SCM') { 
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Github', url: 'https://github.com/cherukurisai451/maven_demo.git']]])
     }
-    
-    stage("MAVEN"){
-        echo "MAVEN_BUILD"
+    stage('BUILD') { 
+        sh label: '', script: 'mvn clean package'
     }
-        
-        stage("TEst"){
-        echo "SAI"
-        }
-    
+    stage('TEST') { 
+        // 
+    }
 }
